@@ -38,6 +38,11 @@ Feature: Alice Context
         {
           return $this->Login;
         }
+
+        public function getName()
+        {
+          return $this->Name;
+        }
       }
       """
     And a file named "src/Knp/FcTestBundle/Entity/Product.php" with:
