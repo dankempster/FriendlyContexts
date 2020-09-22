@@ -44,5 +44,7 @@ script:
 #    - phpspec run -fpretty --no-interaction
     - behat
 
-after_script: cat $HOME/travis-debug.html
+after_script:
+    - cat $HOME/travis-debug.html
+    - ls -l $TRAVIS_BUILD_DIR/testapp/app/logs
 
