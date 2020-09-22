@@ -33,8 +33,9 @@ before_install:
     - echo $TRAVIS_BUILD_DIR
 
 install:
-    - if [ "$deps" = "high" ]; then travis_wait composer update --prefer-dist --no-interaction; fi;
-    - if [ "$deps" = "low" ]; then travis_wait composer update --prefer-dist --prefer-lowest --prefer-stable --no-interaction; fi;
+    - composer install
+#    - if [ "$deps" = "high" ]; then travis_wait composer update --prefer-dist --no-interaction; fi;
+#    - if [ "$deps" = "low" ]; then travis_wait composer update --prefer-dist --prefer-lowest --prefer-stable --no-interaction; fi;
 
 before_script:
     - export PATH=./bin:$PATH

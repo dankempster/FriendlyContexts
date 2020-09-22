@@ -2,7 +2,7 @@
 docker*
 /bin/
 /vendor/
-composer.lock
+#composer.lock
 testapp/app/cache
 testapp/app/logs
 testapp/app/*.db3
