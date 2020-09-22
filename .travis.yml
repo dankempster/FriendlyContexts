@@ -44,3 +44,5 @@ script:
 #    - phpspec run -fpretty --no-interaction
     - behat
 
+after_script: cat $HOME/travis-debug.html
+

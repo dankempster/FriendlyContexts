@@ -50,6 +50,7 @@ class FeatureContext extends Context
      */
     public function debugPageHtml()
     {
+        file_put_contents(getenv('HOME') . "/travis-debug.html", $this->minkContext->getSession()->getPage()->getHtml());
         echo "Page: " . $this->minkContext->getSession()->getPage()->getHtml();
     }
 
