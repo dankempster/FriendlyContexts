@@ -50,7 +50,7 @@ class FeatureContext extends Context
      */
     public function debugPageHtml()
     {
-        echo $this->minkContext->getSession()->getPage()->getHtml();
+        echo "Page: " . $this->minkContext->getSession()->getPage()->getHtml();
     }
 
 }
