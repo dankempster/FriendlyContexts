@@ -42,5 +42,5 @@ before_script:
 
 script:
 #    - phpspec run -fpretty --no-interaction
-    - behat features/symfonyapp/entity-context.feature:99
+    - behat
 
