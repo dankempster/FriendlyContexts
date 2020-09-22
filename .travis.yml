@@ -11,6 +11,7 @@ php:
 cache:
     directories:
         - $HOME/.composer/cache/files
+        - $TRAVIS_BUILD_DIR/vendor
 
 matrix:
     allow_failures:
@@ -29,6 +30,7 @@ before_install:
     - composer self-update
     - mkdir -p ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d && echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
     - pwd
+    - echo $TRAVIS_BUILD_DIR
 
 install:
     - if [ "$deps" = "high" ]; then travis_wait composer update --prefer-dist --no-interaction; fi;
