@@ -33,6 +33,11 @@ Feature: Alice Context
          * @ORM\Column
          */
         public $Name;
+
+        public function getLogin()
+        {
+          return $this->Login;
+        }
       }
       """
     And a file named "src/Knp/FcTestBundle/Entity/Product.php" with:
