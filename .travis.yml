@@ -28,6 +28,7 @@ env:
 before_install:
     - composer self-update
     - mkdir -p ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d && echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+    - pwd
 
 install:
     - if [ "$deps" = "high" ]; then travis_wait composer update --prefer-dist --no-interaction; fi;
