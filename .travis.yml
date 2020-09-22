@@ -17,6 +17,10 @@ matrix:
         - php: 7.0
         - php: hhvm
 
+branches:
+    only:
+        - master
+
 env:
     - deps=low
     - deps=high
