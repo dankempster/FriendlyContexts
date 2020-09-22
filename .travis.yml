@@ -42,7 +42,7 @@ before_script:
 
 script:
 #    - phpspec run -fpretty --no-interaction
-    - behat
+    - behat --stop-on-failure
 
 after_script:
     - cat $HOME/travis-debug.html
