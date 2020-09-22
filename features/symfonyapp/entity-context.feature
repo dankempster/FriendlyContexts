@@ -110,6 +110,7 @@ Feature: Alice Context
             | admin | John Doe        |
             | user  | George Abitbol  |
           And I am on the homepage
+          Then debug page HTML
           Then I should see "admin is John Doe"
           And I should see "user is George Abitbol"
       """
@@ -236,8 +237,8 @@ Feature: Alice Context
           And there is 20 products like:
             | user           |
             | george.abitbol |
-          And I am on the homepage
           When I am on the homepage
+          Then debug page HTML
           Then I should see "20 products created by 11 users"
       """
     And a file named "src/Knp/FcTestBundle/Controller/DefaultController.php" with:
@@ -379,6 +380,7 @@ Feature: Alice Context
             | admin | John Doe        |
             | user  | George Abitbol  |
           And I am on the homepage
+          Then debug page HTML
           When I follow "Delete George Abitbol"
           Then I should see "User deleted successfully!"
           And 1 user should have been deleted
