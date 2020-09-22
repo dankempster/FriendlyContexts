@@ -1,6 +1,8 @@
 <?php
 
 
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
+use Behat\MinkExtension\Context\MinkContext;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
@@ -8,6 +10,22 @@ use Knp\FriendlyContexts\Context\Context;
 
 class FeatureContext extends Context
 {
+    /**
+     * @var MinkContext
+     */
+    protected $minkContext;
+
+    /**
+     * @BeforeScenario
+     * @param BeforeScenarioScope $scope
+     */
+    public function gatherContexts(BeforeScenarioScope $scope)
+    {
+        $environment = $scope->getEnvironment();
+
+        $this->minkContext = $environment->getContext('Behat\MinkExtension\Context\MinkContext');
+    }
+
     /**
      * @BeforeScenario
      */
@@ -25,6 +43,14 @@ class FeatureContext extends Context
                 );
             }
         }
+    }
+
+    /**
+     * @Then debug page HTML
+     */
+    public function debugPageHtml()
+    {
+        echo $this->minkContext->getSession()->getPage()->getHtml();
     }
 
 }
