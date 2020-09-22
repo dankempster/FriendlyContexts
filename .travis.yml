@@ -30,7 +30,7 @@ install:
     - if [ "$deps" = "low" ]; then composer update --prefer-dist --prefer-lowest --prefer-stable --no-interaction; fi;
 
 before_script:
-    - export PATH=./vendor/bin:$PATH
+    - export PATH=./bin:$PATH
 
 script:
     - phpspec run -fpretty --no-interaction
