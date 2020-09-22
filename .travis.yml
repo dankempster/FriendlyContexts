@@ -37,6 +37,6 @@ before_script:
     - export PATH=./bin:$PATH
 
 script:
-    - phpspec run -fpretty --no-interaction
-    - behat
+#    - phpspec run -fpretty --no-interaction
+    - behat features/symfonyapp/entity-context.feature:99
 
