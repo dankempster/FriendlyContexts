@@ -3,6 +3,7 @@ parameters:
 
 framework:
     secret: ThisTokenIsNotSoSecretChangeIts
+    assets: false
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: "%kernel.debug%"
