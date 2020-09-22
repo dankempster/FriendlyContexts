@@ -110,7 +110,7 @@ Feature: Alice Context
             | admin | John Doe        |
             | user  | George Abitbol  |
           And I am on the homepage
-          Then debug page HTML
+#          Then debug page HTML
           Then I should see "admin is John Doe"
           And I should see "user is George Abitbol"
       """
