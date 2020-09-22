@@ -23,6 +23,7 @@
         "symfony/form": "~3",
         "symfony/framework-bundle": "~3",
         "symfony/process": "~3",
+        "symfony/templating": "~3",
         "symfony/twig-bundle": "~3",
         "symfony/validator": "~3",
         "behat/mink-goutte-driver": "^1.2",
