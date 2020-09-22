@@ -46,5 +46,6 @@ script:
 
 after_script:
     - cat $HOME/travis-debug.html
+    - cat $TRAVIS_BUILD_DIR/testapp/src/Knp/FcTestBundle/Resources/views/Default/index.html.twig
     - ls -l $TRAVIS_BUILD_DIR/testapp/app/logs
 
